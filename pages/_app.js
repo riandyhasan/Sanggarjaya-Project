@@ -11,14 +11,14 @@ const theme = extendTheme({
     primary: {
       green: "#077F46",
       orange: "#F18720",
-      gray: "#767575",
+      grey: "#767575",
       black: "#353535"
     },
     secondary: {
       green: "#33665D",
       orange: "#EE873B",
       yellow: "#EFC43B",
-      gray: "#C5C5C5",
+      grey: "#C5C5C5",
       black: "#353535"
     },
   },
