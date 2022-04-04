@@ -77,12 +77,11 @@ export default function OurProducts() {
       </Text>
       <Grid gridTemplateColumns="repeat(4, 1fr)" gridGap={10}>
         {datas.map((item, i) => (
-          <GridItem>
+          <GridItem key={i}>
             <ProductCard
               img={item.img}
               text={item.text}
               hover={item.hover}
-              key={i}
             />
           </GridItem>
         ))}
