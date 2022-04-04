@@ -12,14 +12,14 @@ const theme = extendTheme({
       green: "#077F46",
       orange: "#F18720",
       grey: "#767575",
-      black: "#353535"
+      black: "#353535",
     },
     secondary: {
       green: "#33665D",
       orange: "#EE873B",
       yellow: "#EFC43B",
       grey: "#C5C5C5",
-      black: "#353535"
+      black: "#353535",
     },
   },
 });
