@@ -1,6 +1,6 @@
 import { Flex, Heading, Box, Text, Grid, GridItem } from "@chakra-ui/react";
 
-const ProductCard = ({ img, text, hover }) => {
+const ProductCard = ({ img, text }) => {
   return (
     <Box
       bg={img}
@@ -17,7 +17,7 @@ const ProductCard = ({ img, text, hover }) => {
       filter="drop-shadow(0px 22px 40px rgba(0, 0, 0, 0.15))"
       borderRadius="11px"
       _hover={{
-        bg: hover,
+        bg: `linear-gradient(0deg, #F18720 -19.6%, #F18720 -19.59%, rgba(255, 255, 255, 0) 100%), ${img}`,
         bgRepeat: "no-repeat",
         bgSize: "cover",
         bgPosition: "center",
@@ -34,22 +34,18 @@ export default function OurProducts() {
   const datas = [
     {
       img: "url('/assets/images/products/electrical-pole.png')",
-      hover: "url('/assets/images/products/electrical-pole-hover.png')",
       text: "Electrical & Utility Pole",
     },
     {
       img: "url('/assets/images/products/light-pole.png')",
-      hover: "url('/assets/images/products/light-pole-hover.png')",
       text: "Light Pole",
     },
     {
       img: "url('/assets/images/products/monopole-tower.png')",
-      hover: "url('/assets/images/products/monopole-tower-hover.png')",
       text: "Monopole Tower",
     },
     {
       img: "url('/assets/images/products/custom.png')",
-      hover: "url('/assets/images/products/custom-hover.png')",
       text: "Custom Mount Antena",
     },
   ];
@@ -78,11 +74,7 @@ export default function OurProducts() {
       <Grid gridTemplateColumns="repeat(4, 1fr)" gridGap={10}>
         {datas.map((item, i) => (
           <GridItem key={i}>
-            <ProductCard
-              img={item.img}
-              text={item.text}
-              hover={item.hover}
-            />
+            <ProductCard img={item.img} text={item.text} />
           </GridItem>
         ))}
       </Grid>
