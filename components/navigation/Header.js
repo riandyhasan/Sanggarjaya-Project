@@ -41,7 +41,7 @@ const LINKS = [
   },
   {
     name: "Our Products",
-    path: "/out-products",
+    path: "/products",
     submenu: [
       {
         subname: "All Products",
