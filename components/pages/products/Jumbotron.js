@@ -1,4 +1,4 @@
-import { Flex, Heading, Box, Grid, GridItem } from "@chakra-ui/react";
+import { Flex, Heading, Box, Grid, GridItem, Select } from "@chakra-ui/react";
 import { useState } from "react";
 
 export default function Jumbotron() {
@@ -10,9 +10,9 @@ export default function Jumbotron() {
       bgSize="cover"
       bgPosition="center"
       w="100%"
-      h="60vh"
+      h={{ base:"30vh", md:"60vh" }}
       alignItems="center"
-      px="4rem"
+      px={{ base:"1rem", md:"4rem" }}
       py="1.5rem"
       color="white"
     >
@@ -23,10 +23,10 @@ export default function Jumbotron() {
         w="100%"
         px="3rem"
       >
-        <Heading size="4xl" borderBottom="5px solid #F18720">
+        <Heading fontSize={{ base:"2.5em", md:"3em" }} borderBottom="5px solid #F18720">
           {type}
         </Heading>
-        <Grid gridTemplateColumns="repeat(3, 1fr)" gap={10}>
+        <Grid display={{ base:"none", md:"grid" }} gridTemplateColumns="repeat(3, 1fr)" gap={10}>
           <GridItem>
             <Box
               fontSize="1em"
@@ -83,7 +83,7 @@ export default function Jumbotron() {
             </Box>
           </GridItem>
         </Grid>
-        <Grid gridTemplateColumns="repeat(2, 1fr)" gap={10}>
+        <Grid display={{ base:"none", md:"grid" }} gridTemplateColumns="repeat(2, 1fr)" gap={10}>
           <GridItem>
             <Box
               fontSize="1em"
@@ -123,6 +123,15 @@ export default function Jumbotron() {
             </Box>
           </GridItem>
         </Grid>
+        <Box w="100%" display={{ base:"block", md:"none" }}>
+          <Select value={type} onChange={(e) => setType(e.target.value)} bg="primary.orange" borderRadius="20px" textAlign="center" fontSize="1.2em" w="100%">
+          <option value='Our Products' style={{ color: "#353535" }}>All Products</option>
+          <option value='Electrical & Utility Pole' style={{ color: "#353535" }}>Electrical & Utility Pole</option>
+          <option value='Light Pole' style={{ color: "#353535" }}>Light Pole</option>
+          <option value='Monopole Tower' style={{ color: "#353535" }}>Monopole Tower</option>
+          <option value='Custom Mount Antena' style={{ color: "#353535" }}>Custom Mount Antena</option>
+          </Select>
+        </Box>
       </Flex>
     </Flex>
   );

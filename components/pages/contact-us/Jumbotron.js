@@ -10,13 +10,13 @@ export default function Jumbotron() {
       w="100%"
       minH="92vh"
       alignItems="flex-start"
-      px="4rem"
+      px={{ base:"2rem", md:"4rem" }}
       pt="3rem"
       color="white"
     >
       <Flex flexDir="column" gridGap="2rem" alignItems="center" color="white">
         <Heading borderBottom="5px solid #077F46">Contact Us</Heading>
-        <Text fontWeight={400} fontSize="0.85em" textAlign="center" maxW="55%">
+        <Text fontWeight={400} fontSize={{ base:"1em", md:"0.85em" }} textAlign="center" maxW={{ base:"100%", md: "55%" }}>
           PT. Sanggar Jaya Abadi (SJA) providing any information needed through
           various communication channels. For any questions relating to PT.
           Sanggar Jaya Abadi (SJA), please contact us.{" "}

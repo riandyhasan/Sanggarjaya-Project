@@ -16,7 +16,7 @@ export default function Spesification() {
   return (
     <Flex w="100%" flexDir="column" py="3rem" px="3rem" bg="#FBFBFB">
       <Flex flexDir="column" alignItems="flex-start">
-        <Box h="5px" w="5%" bg="primary.orange" borderRadius="5px" />
+        <Box h="5px" w={{ base:"20%", md:"5%" }} bg="primary.orange" borderRadius="5px" />
         <Heading size="xl" lineHeight="72px" color="primary.black">
           Product Specification
         </Heading>
@@ -27,11 +27,11 @@ export default function Spesification() {
       <Flex w="100%" justifyContent="center" mt="3rem">
         <Box
           bg="#FFFFFF"
-          px="2rem"
+          // px="2rem"
           pb="2rem"
           boxShadow="0px 22px 40px rgba(0, 0, 0, 0.15)"
         >
-          <Table variant="unstyle">
+          <Table variant="unstyle" maxW="200px">
             <Thead>
               <Tr>
                 <Th color="primary.black">Type of Pole</Th>
