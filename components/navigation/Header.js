@@ -77,9 +77,6 @@ export default function Header({ ...props }) {
   return (
     <Flex
       as="nav"
-      bgImg="url('/assets/images/background/navbar.png')"
-      bgRepeat="no-repeat"
-      bgSize="cover"
       align="center"
       justify="space-between"
       wrap="wrap"
@@ -105,9 +102,9 @@ export default function Header({ ...props }) {
       >
         {menuOpen ? <GrClose size={24} /> : <GiHamburgerMenu size={24} />}
       </Box>
-      <Flex flexDir="column" gridGap="1rem">
+      <Flex flexDir="column" gridGap="1rem" flexBasis={{ base: "100%", md: "auto" }}>
         <Box
-          display={{ base: menuOpen ? "block" : "none", md: "block" }}
+          display={{ base: "none", md: "block" }}
           flexBasis={{ base: "100%", md: "auto" }}
         >
           <Stack
@@ -203,7 +200,7 @@ export default function Header({ ...props }) {
           flexBasis={{ base: "100%", md: "auto" }}
         >
           <Stack
-            mt={{ base: menuOpen ? "1em" : "0", md: "0" }}
+            mb={{ base: menuOpen ? "1em" : "0", md: "0" }}
             spacing={10}
             align="center"
             justify={["center", "space-between", "flex-end", "flex-end"]}

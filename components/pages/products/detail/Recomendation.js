@@ -6,7 +6,7 @@ import { IoChevronBack } from "react-icons/io5";
 export default function Recomendation() {
   const router = useRouter();
   return (
-    <Flex w="100%" flexDir="column" py="3rem" px="3rem">
+    <Flex w="100%" flexDir="column" py="3rem" px={{ base:"1rem", md:"3rem" }}>
       <Flex
         w="100%"
         gridGap="1rem"
@@ -31,8 +31,16 @@ export default function Recomendation() {
           Back to Catalog
         </Text>
       </Flex>
-      <Flex w="100%" gridGap="4rem">
+      <Flex w="100%" gridGap="4rem" display={{ base:"none", md:"flex" }}>
         {[...Array(4)].map((x, i) => (
+          <Card
+            img="url(/assets/images/products/dummy.png)"
+            text="Single Segment Utility Pole"
+          />
+        ))}
+      </Flex>
+      <Flex w="100%" gridGap="1rem" display={{ base:"flex", md:"none" }}>
+        {[...Array(3)].map((x, i) => (
           <Card
             img="url(/assets/images/products/dummy.png)"
             text="Single Segment Utility Pole"

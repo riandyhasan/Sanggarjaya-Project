@@ -18,8 +18,8 @@ export default function ProductCard({ img, text }) {
       display="flex"
       alignItems="flex-end"
       color="white"
-      w="254.25px"
-      h="314.25px"
+      w={{ base: "153.82px", md:"254.25px"}}
+      h={{ base:"190.12px" , md: "314.25px" }}
       filter="drop-shadow(0px 22px 40px rgba(0, 0, 0, 0.15))"
       borderRadius="11px"
       cursor="pointer"

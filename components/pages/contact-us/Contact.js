@@ -76,16 +76,16 @@ export default function Contact({ ...props }) {
       );
   };
   return (
-    <Flex filter="drop-shadow(0px 22px 40px rgba(0, 0, 0, 0.15))" {...props}>
+    <Flex filter="drop-shadow(0px 22px 40px rgba(0, 0, 0, 0.15))" flexDir={{ base:"column", md:"row" }} {...props}>
       <Box
         bg="url('/assets/images/background/contact-information.png')"
         bgRepeat="no-repeat"
         bgSize="cover"
         color="white"
         p="1rem"
-        w="30%"
+        w={{ base:"100%", md:"30%" }}
       >
-        <Heading mb="2rem">Contact Information</Heading>
+        <Heading mb={{ base:"1rem", md:"2rem" }} fontSize={{ base:"1.2em", md:"1.5em" }}>Contact Information</Heading>
         <Flex gridGap="1rem">
           <FaMapMarkerAlt size="2.5em" />
           <Flex flexDir="column" gridGap="0.5rem">
@@ -118,7 +118,7 @@ export default function Contact({ ...props }) {
           </Flex>
         </Flex>
         <Divider />
-        <Flex gridGap="2rem" color="white">
+        <Flex gridGap="2rem" color="white" my={{ base:"1rem", md:"0" }}>
           <a
             href="/"
             target="_blank"
@@ -153,8 +153,8 @@ export default function Contact({ ...props }) {
           </a>
         </Flex>
       </Box>
-      <Box w="70%" bg="#FBFBFB" py="1rem" px="2rem">
-        <Box bg="primary.green" h="5px" w="8%" borderRadius="20px" />
+      <Box w={{ base:"100%", md:"70%" }} bg="#FBFBFB" py="1rem" px="2rem">
+        <Box bg="primary.green" h="5px" w={{ base:"16%", md:"8%" }} borderRadius="20px" />
         <Heading size="lg" color="primary.black">
           Send Us A Message
         </Heading>
@@ -167,8 +167,8 @@ export default function Contact({ ...props }) {
           pb="1rem"
         >
           <GridItem>
-            <Flex gridGap="2rem" alignItems="center">
-              <FormControl w="60%" isRequired>
+            <Flex gridGap="2rem" alignItems={{ base:"flex-start", md: "center" }} flexDir={{ base:"column", md:"row" }}>
+              <FormControl w={{ base:"100%", md:"60%" }} isRequired>
                 <FormLabel
                   htmlFor="name"
                   color="primary.black"
@@ -188,7 +188,7 @@ export default function Contact({ ...props }) {
                   onChange={(e) => setName(e.target.value)}
                 />
               </FormControl>
-              <FormControl w="40%" isRequired>
+              <FormControl w={{ base:"100%", md:"40%" }} isRequired>
                 <FormLabel
                   htmlFor="phone"
                   color="primary.black"
@@ -278,7 +278,7 @@ export default function Contact({ ...props }) {
           bg="primary.orange"
           borderRadius="20px"
           boxShadow="0px 22px 40px rgba(0, 0, 0, 0.15)"
-          w="15%"
+          w={{ base:"100%", md:"15%" }}
           textAlign="center"
           fontSize="0.85em"
           fontWeight={600}
@@ -286,6 +286,7 @@ export default function Contact({ ...props }) {
           color="white"
           _hover={{ bg: "#D26801" }}
           onClick={handleSend}
+          my={{ base:"1rem",  md:"0" }}
         >
           Send
         </Box>

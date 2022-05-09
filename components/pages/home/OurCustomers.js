@@ -64,7 +64,7 @@ export default function OurCustomers() {
       <Heading color="primary.black" borderBottom="5px solid #077F46">
         Our Customers
       </Heading>
-      <Grid gridTemplateColumns="repeat(4, 1fr)" gridGap={6}>
+      <Grid gridTemplateColumns={{ base: "repeat(3, 1fr)", md: "repeat(4, 1fr)" }} gridGap={6}>
         {customers.map((item, i) => (
           <GridItem key={i}>
             <Image src={item.img} alt={item.name} />

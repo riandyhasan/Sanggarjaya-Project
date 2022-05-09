@@ -10,14 +10,14 @@ import {
 
 export default function VisionMision() {
   return (
-    <Flex w="100%" gridGap="4rem" justifyContent="center" py="3rem" px="3rem">
-      <Flex flexDir="column" w="45%" gridGap="3rem">
+    <Flex w="100%" gridGap="4rem" justifyContent="center" py="3rem" px={{ base:"2rem", md:"3rem" }} flexDir={{ base:"column-reverse", md:"row" }} alignItems={{ base:"center", md:"flex-start" }}>
+      <Flex flexDir="column" w={{ base:"100%", md:"45%" }} gridGap="3rem">
         <Box>
           <Box bg="primary.orange" w="20%" h="4px" borderRadius="5px" />
           <Heading color="primary.black" size="xl" mt="1rem">
             Vision
           </Heading>
-          <Text fontWeight={400} fontSize="0.75em" maxW="80%" mt="2rem">
+          <Text fontWeight={400} fontSize={{ base:"1em", md:"0.75em" }} maxW={{ base:"100%", md: "80%" }} mt={{ base:"0.5rem", md: "2rem" }}>
             To establish PT. Sanggar Jaya Abadi as the biggest, the best and the
             most trustworthy company in Indonesia.
           </Text>
@@ -28,7 +28,7 @@ export default function VisionMision() {
           <Heading color="primary.black" size="xl" mt="1rem">
             Mission
           </Heading>
-          <Text fontWeight={400} fontSize="0.75em" maxW="80%" mt="2rem">
+          <Text fontWeight={400} fontSize={{ base:"1em", md:"0.75em" }} maxW={{ base:"100%", md: "80%" }} mt={{ base:"0.5rem", md: "2rem" }}>
             <OrderedList>
               <ListItem>
                 Creating a quality product with a high level of gurantee.
@@ -42,7 +42,7 @@ export default function VisionMision() {
           </Text>
         </Box>
       </Flex>
-      <Flex width="35%">
+      <Flex width={{ base: "95%", md:"35%" }}>
         <Image src="/assets/images/background/vision-mision.png" />
       </Flex>
     </Flex>

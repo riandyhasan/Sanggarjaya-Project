@@ -1,7 +1,7 @@
 import { Flex, Heading, Text, Box } from "@chakra-ui/react";
 import { HiDownload } from "react-icons/hi";
 
-export default function Jumbotron() {
+export default function  Jumbotron() {
   return (
     <Flex
       bg="url(/assets/images/background/about-us.png)"
@@ -9,15 +9,15 @@ export default function Jumbotron() {
       bgSize="cover"
       bgPosition="center"
       w="100%"
-      minH="100vh"
-      alignItems="center"
-      px="4rem"
+      minH={{ base:"90vh", md:"100vh" }}
+      alignItems={{ base:"flex-start", md:"center" }}
+      px={{ base:"3rem", md:"4rem" }}
       pt="3rem"
       color="white"
     >
-      <Flex flexDir="column" gridGap="2rem" maxW="65%">
-        <Heading size="4xl">About Us</Heading>
-        <Text maxW="70%">
+      <Flex flexDir="column" gridGap="2rem" maxW={{ base:"100%", md:"65%" }}>
+        <Heading fontSize={{ base:"2.5em", md:"3em" }}>About Us</Heading>
+        <Text maxW={{ base:"100%", md:"70%" }}>
           PT. Sanggar Jaya Abadi (SJA) was established in 2011, located in the
           Dwipuri Indsutrial complex, outside of Sumedang, West Java, Indonesia.
           Our company produce various steel based poles such as Utility Poles,
@@ -34,11 +34,12 @@ export default function Jumbotron() {
           bg="primary.orange"
           borderRadius="20px"
           boxShadow="0px 22px 40px rgba(0, 0, 0, 0.15)"
-          w="35%"
+          w={{ base:"90%", md:"35%" }}
           textAlign="center"
           fontWeight={600}
           cursor="pointer"
           _hover={{ bg: "#D26801" }}
+          mt={{ base:"2rem", md:"0" }}
         >
           <Flex cursor="pointer" justifyContent="center">
             <HiDownload size="1.5em" />

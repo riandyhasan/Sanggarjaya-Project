@@ -15,7 +15,7 @@ export default function ContactUs() {
 
       <Flex flexDir="column" w="100%" alignItems="center">
         <Jumbotron />
-        <ContactForm mt="-28%" w="80%" />
+        <ContactForm mt={{ base:"-32rem", md:"-22rem" }} w="80%" />
       </Flex>
 
       <Map />

@@ -64,14 +64,14 @@ export default function OurProducts() {
       <Text
         color="primary.black"
         fontWeight={400}
-        fontSize="0.85em"
+        fontSize={{ base: "1em", md:"0.85em" }}
         textAlign="center"
-        maxW="40%"
+        maxW={{ base:"90%", md:"40%" }}
       >
         We have a lineup of product that are proven and are used throughout the
         nation in many capacity.{" "}
       </Text>
-      <Grid gridTemplateColumns="repeat(4, 1fr)" gridGap={10}>
+      <Grid gridTemplateColumns={{ base:"repeat(2, 1fr)" , md:"repeat(4, 1fr)" }} gridGap={{ base: 6, md: 10 }} mt={{ base: "1rem", md:"0" }}>
         {datas.map((item, i) => (
           <GridItem key={i}>
             <ProductCard img={item.img} text={item.text} />
@@ -79,17 +79,18 @@ export default function OurProducts() {
         ))}
       </Grid>
       <Box
-        py="0.3rem"
+        py={{ base:"0.6rem", md:"0.3rem" }}
         bg="primary.orange"
         borderRadius="20px"
         boxShadow="0px 22px 40px rgba(0, 0, 0, 0.15)"
-        w="15%"
+        w={{ base: "65%", md:"15%" }}
         textAlign="center"
-        fontSize="0.85em"
+        fontSize={{ base:"1.2em", md:"0.85em" }}
         fontWeight={600}
         cursor="pointer"
         color="white"
         _hover={{ bg: "#D26801" }}
+        mt={{ base: "2rem", md:"0" }}
       >
         See all our products
       </Box>
