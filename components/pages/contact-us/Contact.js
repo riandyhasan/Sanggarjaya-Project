@@ -60,33 +60,40 @@ export default function Contact({ ...props }) {
       company: company,
       message: message,
     };
-    emailjs.send('service_6n99xc6', 'template_vhv813q', emailParams, 'yPRr8ktHxDe5vOY83').then(
-      (result) => {
-        toast({
-          title: 'Success!',
-          description: 'Your messages has sent successfully!',
-          status: 'success',
-          duration: 2000,
-          isClosable: true,
-        });
-        setOnSubmit(false);
-        setName('');
-        setEmail('');
-        setPhone('');
-        setMessage('');
-        setCompany('');
-      },
-      (error) => {
-        toast({
-          title: 'Failed!',
-          description: error.text,
-          status: 'error',
-          duration: 2000,
-          isClosable: true,
-        });
-        setOnSubmit(false);
-      }
-    );
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_EMAIL_SERVICE,
+        process.env.NEXT_PUBLIC_EMAIL_TEMPLATE,
+        emailParams,
+        process.env.NEXT_PUBLIC_EMAIL_CREDENTIALS
+      )
+      .then(
+        (result) => {
+          toast({
+            title: 'Success!',
+            description: 'Your messages has sent successfully!',
+            status: 'success',
+            duration: 2000,
+            isClosable: true,
+          });
+          setOnSubmit(false);
+          setName('');
+          setEmail('');
+          setPhone('');
+          setMessage('');
+          setCompany('');
+        },
+        (error) => {
+          toast({
+            title: 'Failed!',
+            description: error.text,
+            status: 'error',
+            duration: 2000,
+            isClosable: true,
+          });
+          setOnSubmit(false);
+        }
+      );
   }
   return (
     <Flex filter='drop-shadow(0px 22px 40px rgba(0, 0, 0, 0.15))' flexDir={{ base: 'column', md: 'row' }} {...props}>
