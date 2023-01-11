@@ -1,67 +1,74 @@
-import {
-  Flex,
-  Heading,
-  Text,
-  Image,
-  Box,
-  Table,
-  Thead,
-  Tbody,
-  Tr,
-  Th,
-  Td,
-} from "@chakra-ui/react";
+import { Flex, Heading, Text, Image, Box, Table, Thead, Tbody, Tr, Th, Td } from '@chakra-ui/react';
+import { PRODUCT_LIST } from '../../../../const';
+import { useState, useEffect } from 'react';
 
-export default function Spesification() {
+export default function Spesification({ id }) {
+  const [productData, setProductData] = useState(null);
+
+  function getProductData(id) {
+    PRODUCT_LIST.map((p) => {
+      if (p.id == id) setProductData(p);
+    });
+  }
+
+  useEffect(() => {
+    getProductData(id);
+  }, [id]);
+
   return (
-    <Flex w="100%" flexDir="column" py="3rem" px="3rem" bg="#FBFBFB">
-      <Flex flexDir="column" alignItems="flex-start">
-        <Box h="5px" w={{ base:"20%", md:"5%" }} bg="primary.orange" borderRadius="5px" />
-        <Heading size="xl" lineHeight="72px" color="primary.black">
+    <Flex w='100%' flexDir='column' py='3rem' px='3rem' bg='#FBFBFB'>
+      <Flex flexDir='column' alignItems='flex-start'>
+        <Box h='5px' w={{ base: '20%', md: '5%' }} bg='primary.orange' borderRadius='5px' />
+        <Heading size='xl' lineHeight='72px' color='primary.black'>
           Product Specification
         </Heading>
       </Flex>
-      <Flex w="100%" justifyContent="center">
-        <Image src="/assets/images/products/spek-dummy.png" />
+      <Flex w='100%' justifyContent='center'>
+        <Flex maxW='40%'>
+          <Image src={productData?.img} />
+        </Flex>
       </Flex>
-      <Flex w="100%" justifyContent="center" mt="3rem">
-        <Box
-          bg="#FFFFFF"
+      {productData?.spec && (
+        <Flex w='100%' justifyContent='center'>
+          <Flex maxW='90%'>
+            <Image src={productData.spec} />
+          </Flex>
+          {/* <Box
+          bg='#FFFFFF'
           // px="2rem"
-          pb="2rem"
-          boxShadow="0px 22px 40px rgba(0, 0, 0, 0.15)"
-        >
-          <Table variant="unstyle" maxW="200px">
+          pb='2rem'
+          boxShadow='0px 22px 40px rgba(0, 0, 0, 0.15)'>
+          <Table variant='unstyle' maxW='200px'>
             <Thead>
               <Tr>
-                <Th color="primary.black">Type of Pole</Th>
-                <Th color="primary.black">Diameter</Th>
-                <Th isNumeric color="primary.black">
+                <Th color='primary.black'>Type of Pole</Th>
+                <Th color='primary.black'>Diameter</Th>
+                <Th isNumeric color='primary.black'>
                   Thickness
                 </Th>
-                <Th isNumeric color="primary.black">
+                <Th isNumeric color='primary.black'>
                   Length
                 </Th>
-                <Th isNumeric color="primary.black" textAlign="left">
+                <Th isNumeric color='primary.black' textAlign='left'>
                   Over <br />
-                  <br /> <span style={{ color: "#077F46" }}>Length</span>
+                  <br /> <span style={{ color: '#077F46' }}>Length</span>
                 </Th>
-                <Th isNumeric color="primary.black">
-                  {" "}
+                <Th isNumeric color='primary.black'>
+                  {' '}
                   <br />
-                  <br /> <span style={{ color: "#077F46" }}>Height</span>
+                  <br /> <span style={{ color: '#077F46' }}>Height</span>
                 </Th>
-                <Th isNumeric color="primary.green">
+                <Th isNumeric color='primary.green'>
                   Total <br />
-                  <br />{" "}
+                  <br />{' '}
                 </Th>
               </Tr>
-              <Box h="5px" w="570%" bg="primary.orange" borderRadius="5px" />
+              <Box h='5px' w='570%' bg='primary.orange' borderRadius='5px' />
             </Thead>
 
             <Tbody>
               <Tr>
-                <Td color="primary.green" fontWeight="bold">
+                <Td color='primary.green' fontWeight='bold'>
                   1. FMI 8,4m
                 </Td>
                 <Td>139,9mm</Td>
@@ -71,9 +78,9 @@ export default function Spesification() {
                 <Td>1600mm</Td>
                 <Td>8400mm</Td>
               </Tr>
-              <Box h="5px" w="570%" bg="primary.orange" borderRadius="5px" />
+              <Box h='5px' w='570%' bg='primary.orange' borderRadius='5px' />
               <Tr>
-                <Td color="primary.green" fontWeight="bold">
+                <Td color='primary.green' fontWeight='bold'>
                   2. FMI 9m
                 </Td>
                 <Td>139,9mm</Td>
@@ -83,9 +90,9 @@ export default function Spesification() {
                 <Td>1600mm</Td>
                 <Td>9000mm</Td>
               </Tr>
-              <Box h="5px" w="570%" bg="primary.orange" borderRadius="5px" />
+              <Box h='5px' w='570%' bg='primary.orange' borderRadius='5px' />
               <Tr>
-                <Td color="primary.green" fontWeight="bold">
+                <Td color='primary.green' fontWeight='bold'>
                   3. IKO 6m
                 </Td>
                 <Td>88,9mm</Td>
@@ -95,11 +102,12 @@ export default function Spesification() {
                 <Td>-</Td>
                 <Td>6000mm</Td>
               </Tr>
-              <Box h="5px" w="570%" bg="primary.orange" borderRadius="5px" />
+              <Box h='5px' w='570%' bg='primary.orange' borderRadius='5px' />
             </Tbody>
           </Table>
-        </Box>
-      </Flex>
+        </Box> */}
+        </Flex>
+      )}
     </Flex>
   );
 }

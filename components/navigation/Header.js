@@ -5,6 +5,7 @@ import { RiPhoneFill, RiArrowDropDownLine, RiTelegramFill, RiWhatsappFill } from
 import { GrClose } from 'react-icons/gr';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 const LINKS = [
   {
@@ -17,19 +18,19 @@ const LINKS = [
     submenu: [
       {
         subname: 'Vision & Mission',
-        subpath: '/visimisi',
+        subpath: '#visimisi',
       },
       {
         subname: 'Milestone',
-        subpath: '/milestone',
+        subpath: '#milestone',
       },
       {
         subname: 'Certification',
-        subpath: '/certification',
+        subpath: '#certification',
       },
       {
         subname: 'Legal Information',
-        subpath: '/legal-information',
+        subpath: '#legal-information',
       },
     ],
   },
@@ -39,23 +40,23 @@ const LINKS = [
     submenu: [
       {
         subname: 'All Products',
-        subpath: '/all',
+        subpath: '',
       },
       {
         subname: 'Electrical & Utility Pole',
-        subpath: '/eletrical',
+        subpath: '?type=electrical-utility-pole',
       },
       {
         subname: 'Light Pole',
-        subpath: '/light-pole',
+        subpath: '?type=light-pole',
       },
       {
         subname: 'Monopole Tower',
-        subpath: '/monopole',
+        subpath: '?type=monopole-tower',
       },
       {
         subname: 'Custom Mount Antena',
-        subpath: '/custom',
+        subpath: '?type=custom-mount-antena',
       },
     ],
   },
@@ -67,6 +68,8 @@ const LINKS = [
 
 export default function Header({ ...props }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [subMenuOpen, setSubMenuOpen] = useState(null);
+  const router = useRouter();
 
   return (
     <Flex
@@ -143,29 +146,74 @@ export default function Header({ ...props }) {
             align='center'
             justify={['center', 'space-between', 'flex-end', 'flex-end']}
             direction={['column', 'row', 'row', 'row']}>
-            {LINKS.map((link) => {
+            {LINKS.map((link, idx) => {
               return (
-                <Box key={link.name + '-nav'}>
+                <Box key={link.name + '-nav'} pos='relative'>
                   <Link href={link.path} key={link.name + '-nav'}>
                     {link.submenu ? (
-                      <Flex
-                        alignItems='center'
-                        cursor='pointer'
-                        _hover={{ color: 'primary.orange' }}
-                        color='primary.black'>
-                        <Text fontSize='0.85rem' fontWeight='bold' textAlign='center'>
-                          {link.name}
-                        </Text>
-                        <RiArrowDropDownLine size='1.2em' />
-                      </Flex>
+                      <>
+                        <Flex
+                          alignItems='center'
+                          cursor='pointer'
+                          _hover={{ color: 'primary.orange' }}
+                          color={idx != 0 && router.pathname.includes(link.path) ? 'primary.orange' : 'primary.black'}
+                          onMouseEnter={(e) => setSubMenuOpen(idx)}
+                          onMouseLeave={(e) => setSubMenuOpen(null)}>
+                          <Link href={link.path}>
+                            <Text fontSize='0.85rem' fontWeight='bold' textAlign='center'>
+                              {link.name}
+                            </Text>
+                          </Link>
+                          <RiArrowDropDownLine size='1.2em' />
+                        </Flex>
+                        {subMenuOpen == idx && (
+                          <Flex
+                            flexDir='column'
+                            alignItems='center'
+                            justifyContent='center'
+                            p='1rem 2rem'
+                            gap='1rem'
+                            pos='fixed'
+                            bg='white'
+                            top={20}
+                            marginLeft='-3.5rem'
+                            boxShadow='0px 5px 10px rgba(0, 0, 0, 0.15)'
+                            borderRadius='0px 0px 5px 5px'
+                            onMouseEnter={(e) => setSubMenuOpen(idx)}
+                            onMouseLeave={(e) => setSubMenuOpen(null)}>
+                            {link.submenu.map((s, i) => (
+                              <Link key={i} href={link.path + s.subpath}>
+                                <Text
+                                  color='#353535'
+                                  _hover={{ color: 'primary.orange' }}
+                                  cursor='pointer'
+                                  fontSize='0.85rem'
+                                  fontFamily='Hind'>
+                                  {s.subname}
+                                </Text>
+                              </Link>
+                            ))}
+                          </Flex>
+                        )}
+                      </>
                     ) : (
                       <Text
                         fontSize='0.85rem'
                         fontWeight='bold'
                         cursor='pointer'
                         textAlign='center'
-                        color='primary.black'
-                        _hover={{ color: 'primary.orange' }}>
+                        color={
+                          router.pathname.includes(link.path)
+                            ? idx != 0
+                              ? 'primary.orange'
+                              : router.pathname == link.path
+                              ? 'primary.orange'
+                              : 'primary.black'
+                            : 'primary.black'
+                        }
+                        _hover={{ color: 'primary.orange' }}
+                        onMouseEnter={(e) => setSubMenuOpen(idx)}
+                        onMouseLeave={(e) => setSubMenuOpen(null)}>
                         {link.name}
                       </Text>
                     )}

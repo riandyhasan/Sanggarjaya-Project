@@ -28,6 +28,7 @@ export default function Products() {
   useEffect(() => {
     setType(getTypeByQuery(router?.query?.type));
   }, [router?.query?.type]);
+
   return (
     <Layout>
       <Head>
@@ -35,7 +36,7 @@ export default function Products() {
       </Head>
 
       <Jumbotron type={type} setType={setType} />
-      <ProductsList />
+      <ProductsList type={type} />
       <Whatsapp />
     </Layout>
   );

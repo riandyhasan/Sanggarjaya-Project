@@ -39,7 +39,7 @@ export default function Contact({ ...props }) {
     if (name == '' || company == '' || email == '' || phone == '' || company == '') {
       toast({
         title: 'Please fill the form!',
-        description: 'Before you submit, kindly please fill all field first.',
+        description: 'Please fill in all fields before you submit.',
         status: 'error',
         duration: 2000,
         isClosable: true,
@@ -60,7 +60,7 @@ export default function Contact({ ...props }) {
       company: company,
       message: message,
     };
-    emailjs.send('service_nou4ci4', 'template_vhv813q', emailParams, 'yPRr8ktHxDe5vOY83').then(
+    emailjs.send('service_6n99xc6', 'template_vhv813q', emailParams, 'yPRr8ktHxDe5vOY83').then(
       (result) => {
         toast({
           title: 'Success!',
@@ -70,6 +70,11 @@ export default function Contact({ ...props }) {
           isClosable: true,
         });
         setOnSubmit(false);
+        setName('');
+        setEmail('');
+        setPhone('');
+        setMessage('');
+        setCompany('');
       },
       (error) => {
         toast({
