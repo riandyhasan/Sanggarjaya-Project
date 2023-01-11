@@ -13,3 +13,32 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.react-pdf__Page {
+  margin: 0 auto;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+}
+
+.react-pdf__Page__canvas {
+  margin: 0 auto;
+  width: 80% !important;
+  height: 100% !important;
+}
+
+.react-pdf__Page__annotations {
+  display: none !important;
+}
+.react-pdf__Page__textContent {
+  display: none !important;
+}
+
+.icon-disabled polyline {
+  stroke: grey !important;
+}
+
+.icon-available polyline {
+  stroke: black !important;
+}
