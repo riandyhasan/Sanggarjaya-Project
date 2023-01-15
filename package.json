@@ -16,11 +16,11 @@
     "framer-motion": "^6.2.8",
     "next": "12.1.0",
     "pdfjs-dist": "^3.2.146",
-    "react": "17.0.2",
+    "react": "^16.3.0",
     "react-chrono": "^1.14.0",
-    "react-dom": "17.0.2",
+    "react-dom": "^16.3.0",
     "react-icons": "^4.3.1",
-    "react-pdf": "^6.2.2"
+    "react-pdf": "4.2.0"
   },
   "devDependencies": {
     "prettier": "2.6.2"
