@@ -19,17 +19,28 @@ export default function Spesification({ id }) {
     <Flex w='100%' flexDir='column' py='3rem' px='3rem' bg='#FBFBFB'>
       <Flex flexDir='column' alignItems='flex-start'>
         <Box h='5px' w={{ base: '20%', md: '5%' }} bg='primary.orange' borderRadius='5px' />
-        <Heading size={{ base: 'lg', md: 'xl' }} lineHeight={{ base: '40px', md: '72px' }} color='primary.black'>
+        <Heading
+          fontSize={{ base: '1.7em', md: '2em', lg: '2.5em' }}
+          lineHeight={{ base: '40px', md: '72px' }}
+          color='primary.black'>
           Product Specification
         </Heading>
       </Flex>
-      <Flex w='100%' justifyContent='center'>
-        <Flex maxW={{ base: '80%', md: '90%' }}>
+      <Flex justifyContent='center'>
+        <Heading
+          fontSize={{ base: '1.3em', md: '1.5em', lg: '1.8em' }}
+          lineHeight={{ base: '40px', md: '72px' }}
+          color='primary.black'>
+          {productData.name}
+        </Heading>
+      </Flex>
+      <Flex w='100%' justifyContent='center' mt='2rem'>
+        <Flex maxW={{ base: '80%', md: '40%' }}>
           <Image src={productData?.img} />
         </Flex>
       </Flex>
       {productData?.spec && (
-        <Flex w='100%' justifyContent='center' mt={{ base: '2rem', md: '0' }}>
+        <Flex w='100%' justifyContent='center' mt='2rem'>
           <Flex maxW={{ base: '100%', md: '90%' }}>
             <Image src={productData.spec} />
           </Flex>

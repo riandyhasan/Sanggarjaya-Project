@@ -190,8 +190,7 @@ export default function Header({ ...props }) {
                                   color='#353535'
                                   _hover={{ color: 'primary.orange' }}
                                   cursor='pointer'
-                                  fontSize='0.85rem'
-                                  fontFamily='Hind'>
+                                  fontSize='0.85rem'>
                                   {s.subname}
                                 </Text>
                               </Link>
