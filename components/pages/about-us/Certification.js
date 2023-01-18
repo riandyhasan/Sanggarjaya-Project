@@ -123,7 +123,7 @@ export default function Certification() {
   return (
     <>
       <ModalPDF isOpen={isOpen} onClose={onClose} pdfData={pdfData} />
-      <Flex flexDir='column' w='100%' py='3rem' px='3rem'>
+      <Flex flexDir='column' w='100%' py='3rem' px='3rem' id='certification'>
         <Heading color='primary.black' size='2xl' borderBottom='5px solid #EE873B' maxW={{ base: '70%', md: '25%' }}>
           Certification
         </Heading>

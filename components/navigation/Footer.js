@@ -59,14 +59,14 @@ export default function Footer() {
                 onMouseLeave={(e) => (e.target.style.color = '#353535')}
               />
             </a>
-            <a href='https://t.me/erizalrivaldy' target='_blank' rel='noopener' style={{ textDecoration: 'none' }}>
+            {/* <a href='https://t.me/erizalrivaldy' target='_blank' rel='noopener' style={{ textDecoration: 'none' }}>
               <RiTelegramFill
                 size='2em'
                 color='#353535'
                 onMouseEnter={(e) => (e.target.style.color = '#C5C5C5')}
                 onMouseLeave={(e) => (e.target.style.color = '#353535')}
               />
-            </a>
+            </a> */}
           </Flex>
         </Flex>
         <Flex flexDir='column' alignItems='flex-start' justifyContent='flex-start' gridGap='0.65rem' h='100%'>
