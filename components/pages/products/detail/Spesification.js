@@ -31,7 +31,7 @@ export default function Spesification({ id }) {
           fontSize={{ base: '1.3em', md: '1.5em', lg: '1.8em' }}
           lineHeight={{ base: '40px', md: '72px' }}
           color='primary.black'>
-          {productData.name}
+          {productData?.name}
         </Heading>
       </Flex>
       <Flex w='100%' justifyContent='center' mt='2rem'>
