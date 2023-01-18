@@ -100,7 +100,7 @@ export default function Header({ ...props }) {
             justify={['center', 'space-between', 'flex-end', 'flex-end']}
             direction={['column', 'row', 'row', 'row']}
             fontSize='0.85em'>
-            <Flex gridGap='0.5rem' alignItems='center' mr={4} cursor='pointer'>
+            <Flex gridGap='0.5rem' alignItems='center' mr={0} cursor='pointer'>
               <Box bg='primary.orange' borderRadius='20px' px='1rem' _hover={{ bg: 'primary.green' }}>
                 <Flex gridGap='0.6rem' color='white' alignItems='center' fontSize='0.85em'>
                   <RiPhoneFill />
@@ -129,14 +129,14 @@ export default function Header({ ...props }) {
                 onMouseLeave={(e) => (e.target.style.color = '#077F46')}
               />
             </a>
-            <a href='https://t.me/erizalrivaldy' target='_blank' rel='noopener' style={{ textDecoration: 'none' }}>
+            {/* <a href='https://t.me/erizalrivaldy' target='_blank' rel='noopener' style={{ textDecoration: 'none' }}>
               <RiTelegramFill
                 color='#077F46'
                 size='1.2em'
                 onMouseEnter={(e) => (e.target.style.color = '#F18720')}
                 onMouseLeave={(e) => (e.target.style.color = '#077F46')}
               />
-            </a>
+            </a> */}
           </Stack>
         </Box>
         <Box display={{ base: menuOpen ? 'block' : 'none', md: 'block' }} flexBasis={{ base: '100%', md: 'auto' }}>
@@ -164,7 +164,10 @@ export default function Header({ ...props }) {
                               {link.name}
                             </Text>
                           </Link>
-                          <RiArrowDropDownLine size='1.2em' />
+                          <RiArrowDropDownLine
+                            size='1.2em'
+                            style={subMenuOpen == idx && { transform: 'rotate(180deg)' }}
+                          />
                         </Flex>
                         {subMenuOpen == idx && (
                           <Flex

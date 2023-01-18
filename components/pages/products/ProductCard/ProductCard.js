@@ -13,7 +13,7 @@ export default function ProductCard({ img, text, id }) {
       bgPosition='center'
       display='flex'
       alignItems='flex-end'
-      color='white'
+      color={{ base: 'primary.green', md: 'white' }}
       w={{ base: '153.82px', md: '254.25px' }}
       h={{ base: '190.12px', md: '314.25px' }}
       filter='drop-shadow(0px 22px 40px rgba(0, 0, 0, 0.15))'

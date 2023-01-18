@@ -146,9 +146,9 @@ export default function Contact({ ...props }) {
             style={{ textDecoration: 'none' }}>
             <RiWhatsappFill size='2em' />
           </a>
-          <a href='https://t.me/erizalrivaldy' target='_blank' rel='noopener' style={{ textDecoration: 'none' }}>
+          {/* <a href='https://t.me/erizalrivaldy' target='_blank' rel='noopener' style={{ textDecoration: 'none' }}>
             <RiTelegramFill size='2em' />
-          </a>
+          </a> */}
         </Flex>
       </Box>
       <Box w={{ base: '100%', md: '70%' }} bg='#FBFBFB' py='1rem' px='2rem'>
